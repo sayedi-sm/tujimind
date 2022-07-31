@@ -9,6 +9,8 @@ import 'package:tujimind/screens/slef_help_screen.dart';
 import 'package:tujimind/screens/speak_screen.dart';
 
 class MainScreen extends StatefulWidget {
+  static const String id = "MainScreen";
+
   const MainScreen({Key? key}) : super(key: key);
 
   @override
@@ -28,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.black,
-        title: Text(_pageTitle, textAlign: TextAlign.center,),
+        title: Center(child: Text(_pageTitle)),
         actions: [
           IconButton(
             onPressed: () {},

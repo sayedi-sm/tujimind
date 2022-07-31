@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:tujimind/models/tuji_card.dart';
+import 'package:tujimind/screens/activities_screen.dart';
 import 'package:tujimind/widgets/feed_message.dart';
-import 'package:tujimind/widgets/tuji_card.dart';
+import 'package:tujimind/widgets/tuji_card_item.dart';
 
 import '../models/message.dart';
 
@@ -14,22 +16,29 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<List<dynamic>> _tujiCardsData = [
-    [
-      "Screening",
-      FontAwesomeIcons.personDotsFromLine,
-      const Color(0xFF6F59F3),
-    ],
-    [
-      "Find Therapist",
-      FontAwesomeIcons.personBooth,
-      const Color(0xFFED8356),
-    ],
-    [
-      "Activities",
-      FontAwesomeIcons.peopleRobbery,
-      const Color(0xFF267DBD),
-    ],
+  late final List<TujiCard> _tujiCardsData = [
+    TujiCard(
+      title: "Screening",
+      icon: FontAwesomeIcons.personDotsFromLine,
+      color: const Color(0xFF6F59F3),
+      onTap: () {},
+    ),
+    TujiCard(
+      title: "Find Therapist",
+      icon: FontAwesomeIcons.personBooth,
+      color: const Color(0xFFED8356),
+      onTap: () {},
+    ),
+    TujiCard(
+      title: "Activities",
+      icon: FontAwesomeIcons.peopleRobbery,
+      color: const Color(0xFF267DBD),
+      onTap: () {
+        setState(() {
+          Navigator.pushNamed(context, ActivitiesScreen.id);
+        });
+      },
+    ),
   ];
 
   final List<Message> _messages = [
@@ -41,30 +50,30 @@ class _HomeScreenState extends State<HomeScreen> {
     Message(
         sender: "23 Greatest",
         message: "Thanks for listening to my rants, love ya'll"),
-    // Message(
-    //     sender: "Strong Rambo",
-    //     message: "I am really enjoying the discussion we are having."
-    //         "This is really a very good start to find the right way out of our situations"),
-    // Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    // Message(
-    //     sender: "23 Greatest",
-    //     message: "Thanks for listening to my rants, love ya'll"),
-    // Message(
-    //     sender: "Strong Rambo",
-    //     message: "I am really enjoying the discussion we are having."
-    //         "This is really a very good start to find the right way out of our situations"),
-    // Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    // Message(
-    //     sender: "23 Greatest",
-    //     message: "Thanks for listening to my rants, love ya'll"),
-    // Message(
-    //     sender: "Strong Rambo",
-    //     message: "I am really enjoying the discussion we are having."
-    //         "This is really a very good start to find the right way out of our situations"),
-    // Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    // Message(
-    //     sender: "23 Greatest",
-    //     message: "Thanks for listening to my rants, love ya'll"),
+    Message(
+        sender: "Strong Rambo",
+        message: "I am really enjoying the discussion we are having."
+            "This is really a very good start to find the right way out of our situations"),
+    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    Message(
+        sender: "23 Greatest",
+        message: "Thanks for listening to my rants, love ya'll"),
+    Message(
+        sender: "Strong Rambo",
+        message: "I am really enjoying the discussion we are having."
+            "This is really a very good start to find the right way out of our situations"),
+    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    Message(
+        sender: "23 Greatest",
+        message: "Thanks for listening to my rants, love ya'll"),
+    Message(
+        sender: "Strong Rambo",
+        message: "I am really enjoying the discussion we are having."
+            "This is really a very good start to find the right way out of our situations"),
+    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    Message(
+        sender: "23 Greatest",
+        message: "Thanks for listening to my rants, love ya'll"),
   ];
 
   @override
@@ -145,11 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
             shrinkWrap: true,
             children: List.generate(
               _tujiCardsData.length,
-              (index) => TujiCard(
-                title: _tujiCardsData[index][0],
-                icon: _tujiCardsData[index][1],
-                color: _tujiCardsData[index][2],
-              ),
+              (index) => TujiCardItem(_tujiCardsData[index]),
             ),
           ),
           const Padding(

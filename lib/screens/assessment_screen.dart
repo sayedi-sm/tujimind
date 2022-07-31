@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:tujimind/constants.dart';
+import 'package:tujimind/screens/main_screen.dart';
 import 'package:tujimind/widgets/age_card.dart';
 import 'package:tujimind/widgets/checkbox_card.dart';
 import 'package:tujimind/widgets/radio_card.dart';
@@ -153,7 +154,9 @@ class AssessmentScreen extends StatelessWidget {
                   activeSize: const Size(20, 9),
                   spacing: const EdgeInsets.all(5),
                 ),
-                onDone: () {},
+                onDone: () {
+                  Navigator.pushReplacementNamed(context, MainScreen.id);
+                },
               ),
             ),
           ],
