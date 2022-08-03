@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tujimind/constants.dart';
 import 'package:tujimind/widgets/activity_item.dart';
 
 import '../models/activity.dart';
@@ -57,26 +58,7 @@ class ActivitiesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Center(
-          child: Text(
-            "Activities",
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              FontAwesomeIcons.solidBell,
-              size: 20,
-              color: Colors.black,
-            ),
-          )
-        ],
-      ),
+      appBar: buildTujiAppBar("Activities"),
       body: GridView(
         padding: EdgeInsets.symmetric(horizontal: 16),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

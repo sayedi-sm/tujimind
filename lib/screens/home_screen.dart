@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:tujimind/models/tuji_card.dart';
 import 'package:tujimind/screens/activities_screen.dart';
+import 'package:tujimind/screens/main_screen.dart';
+import 'package:tujimind/screens/screening_screen.dart';
 import 'package:tujimind/widgets/feed_message.dart';
 import 'package:tujimind/widgets/tuji_card_item.dart';
 
@@ -21,7 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
       title: "Screening",
       icon: FontAwesomeIcons.personDotsFromLine,
       color: const Color(0xFF6F59F3),
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(
+        MainScreen.universalContext!,
+        ScreeningScreen.id,
+      ),
     ),
     TujiCard(
       title: "Find Therapist",
@@ -33,11 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
       title: "Activities",
       icon: FontAwesomeIcons.peopleRobbery,
       color: const Color(0xFF267DBD),
-      onTap: () {
-        setState(() {
-          Navigator.pushNamed(context, ActivitiesScreen.id);
-        });
-      },
+      onTap: () => Navigator.pushNamed(
+        MainScreen.universalContext!,
+        ActivitiesScreen.id,
+      ),
     ),
   ];
 

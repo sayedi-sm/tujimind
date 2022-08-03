@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tujimind/screens/activities_screen.dart';
+import 'package:tujimind/screens/assessment_screen.dart';
 
 import '../constants.dart';
 import '../models/therapist.dart';
+import '../screens/main_screen.dart';
 
 class TherapistItem extends StatelessWidget {
   final Therapist therapist;
@@ -19,16 +22,19 @@ class TherapistItem extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              width: 140,
-              clipBehavior: Clip.hardEdge,
-              child: FadeInImage(
-                placeholder: AssetImage("assets/images/placeholder.png"),
-                image: NetworkImage(therapist.imageUrl),
-                fit: BoxFit.cover,
+            child: Hero(
+              tag: "therapist${(key as ValueKey).value}",
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                width: 140,
+                clipBehavior: Clip.hardEdge,
+                child: FadeInImage(
+                  placeholder: AssetImage("assets/images/placeholder.png"),
+                  image: NetworkImage(therapist.imageUrl),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -64,7 +70,13 @@ class TherapistItem extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Navigator.of(MainScreen.universalContext!).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => ActivitiesScreen(),
+                  //   ),
+                  // );
+                },
                 child: Text("Book Appointment"),
                 style: ButtonStyle(
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,

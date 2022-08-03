@@ -10,6 +10,7 @@ import 'package:tujimind/screens/speak_screen.dart';
 
 class MainScreen extends StatefulWidget {
   static const String id = "MainScreen";
+  static BuildContext? universalContext;  // Used for accessing the main context to use it in routing later
 
   const MainScreen({Key? key}) : super(key: key);
 
@@ -25,12 +26,14 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    MainScreen.universalContext = context;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.black,
         title: Center(child: Text(_pageTitle)),
+        automaticallyImplyLeading: true,
         actions: [
           IconButton(
             onPressed: () {},
@@ -68,7 +71,6 @@ class _MainScreenState extends State<MainScreen> {
             }
           });
         },
-        // handleAndroidBackButtonPress: false,
         screens: _buildScreens(),
         items: _buildNavBarsItems(),
       ),
