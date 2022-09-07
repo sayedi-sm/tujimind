@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tujimind/constants.dart';
+import 'package:tujimind/screens/specific_screening_screen.dart';
 import 'package:tujimind/widgets/custom_button.dart';
 import 'package:tujimind/widgets/tuji_card_item.dart';
 
 import '../models/tuji_card.dart';
 
-class ScreeningScreen extends StatelessWidget {
+class ScreeningScreen extends StatefulWidget {
   static const String id = "ScreeningScreen";
 
   ScreeningScreen({Key? key}) : super(key: key);
 
-  final List<TujiCard> _tujiCards = [
+  @override
+  State<ScreeningScreen> createState() => _ScreeningScreenState();
+}
+
+class _ScreeningScreenState extends State<ScreeningScreen> {
+  late final List<TujiCard> _tujiCards = [
     TujiCard(
       title: "Screening",
       icon: FontAwesomeIcons.personDotsFromLine,
@@ -40,7 +46,7 @@ class ScreeningScreen extends StatelessWidget {
       title: "Substance Use Disorder",
       icon: FontAwesomeIcons.beerMugEmpty,
       color: const Color(0xFFD87979),
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushNamed(SpecificScreeningScreen.id),
     ),
     TujiCard(
       title: "Personality Test",
@@ -80,12 +86,14 @@ class ScreeningScreen extends StatelessWidget {
               ),
               children: List.generate(
                 _tujiCards.length,
-                    (index) => TujiCardItem(_tujiCards[index]),
+                (index) => TujiCardItem(_tujiCards[index]),
               ),
             ),
             CustomButton(
               child: Text("Request Clinical Screening"),
-              onPressed: () {},
+              onPressed: () {
+
+              },
             ),
           ],
         ),

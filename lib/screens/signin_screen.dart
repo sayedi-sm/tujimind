@@ -99,9 +99,9 @@ class _SigninScreenState extends State<SigninScreen> {
                               onPressed: () {},
                               style: ButtonStyle(
                                 foregroundColor:
-                                    MaterialStateProperty.all(buttonColor),
+                                    MaterialStateProperty.all(primaryColor),
                                 overlayColor: MaterialStateProperty.all(
-                                    buttonColor.withOpacity(0.1)),
+                                    primaryColor.withOpacity(0.1)),
                               ),
                               child: const Text("Forgot Password?"),
                             ),

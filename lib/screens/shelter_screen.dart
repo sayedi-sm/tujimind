@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tujimind/screens/main_screen.dart';
+import 'package:tujimind/screens/message_screen.dart';
 import 'package:tujimind/widgets/shelter_card_item.dart';
 
+import '../constants.dart';
 import '../models/shelter_card.dart';
 
 class ShelterScreen extends StatefulWidget {
@@ -18,14 +21,15 @@ class _ShelterScreenState extends State<ShelterScreen> {
       subtitle: "Discuss with peers & ask "
           "questions on how to survive "
           "depression.",
-      color: const Color(0xFF7E88E3),
+      memberCount: 14789,
+      color: tujiLightBlueColor,
     ),
     ShelterCard(
       title: "Alcoholic Anonymous",
       subtitle: "Discuss with peers & ask "
           "questions on how to survive "
           "and quit alcohol dependence.",
-      color: const Color(0xFFE3693F),
+      color: tujiDarkOrangeColor,
     ),
     ShelterCard(
       title: "For Eating Disorder",
@@ -33,7 +37,7 @@ class _ShelterScreenState extends State<ShelterScreen> {
           "questions on how to survive "
           "depression/Attention deficit "
           "Hyperactivity disorder.",
-      color: const Color(0xFF44AE80),
+      color: tujiGreenColor,
     ),
     ShelterCard(
       title: "For PTSD",
@@ -41,6 +45,7 @@ class _ShelterScreenState extends State<ShelterScreen> {
           "questions on how to survive "
           "PostTraumatic Stress "
           "Disorder.",
+      memberCount: 1,
       color: const Color(0xFF267DBD),
     ),
     ShelterCard(
@@ -49,15 +54,15 @@ class _ShelterScreenState extends State<ShelterScreen> {
           "questions on how to survive "
           "depression/Attention deficit "
           "Hyperactivity disorder.",
-      color: const Color(0xFFD87979),
+      color: tujiRedColor,
     ),
     ShelterCard(
-      title: "For PTSD",
+      title: "For Anxiety",
       subtitle: "Discuss with peers & ask "
           "questions on how to survive "
-          "PostTraumatic Stress "
+          "Anxiety Stress "
           "Disorder.",
-      color: const Color(0xFFB7B7B7),
+      color: tujiGreyColor,
     ),
   ];
 
@@ -83,8 +88,11 @@ class _ShelterScreenState extends State<ShelterScreen> {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
               ),
-              itemBuilder: (ctx, index) =>
-                  ShelterCardItem(_shelterCardList[index]),
+              itemBuilder: (ctx, index) => ShelterCardItem(
+                _shelterCardList[index],
+                () => Navigator.of(MainScreen.universalContext!)
+                    .pushNamed(MessageScreen.id, arguments: _shelterCardList[index]),
+              ),
               itemCount: _shelterCardList.length,
               shrinkWrap: true,
             ),

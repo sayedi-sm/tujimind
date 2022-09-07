@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tujimind/constants.dart';
+import 'package:tujimind/screens/main_screen.dart';
+import 'package:tujimind/screens/special_groups_screen.dart';
 import 'package:tujimind/widgets/custom_button.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -59,9 +61,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             spacing: 16,
             runSpacing: 16,
             children: [
-              CustomButton(child: const Text("Change Avatar"), onPressed: () {}),
-              CustomButton(child: const Text("Special Groups"), onPressed: () {}),
-              CustomButton(child: const Text("Invite Friends"), onPressed: () {}),
+              CustomButton(
+                  child: const Text("Change Avatar"), onPressed: () {}),
+              CustomButton(
+                child: const Text("Special Groups"),
+                onPressed: () =>
+                    Navigator.of(MainScreen.universalContext!).pushNamed(SpecialGroupsScreen.id),
+              ),
+              CustomButton(
+                  child: const Text("Invite Friends"), onPressed: () {}),
               CustomButton(child: const Text("Log out"), onPressed: () {}),
             ],
           ),

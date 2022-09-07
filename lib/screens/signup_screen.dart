@@ -268,9 +268,6 @@ class _SignupFormState extends State<SignupForm> {
                           agreeToTerms = value!;
                         });
                       },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
                     ),
                     Expanded(
                       child: RichText(

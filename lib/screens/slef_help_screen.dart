@@ -1,9 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tujimind/constants.dart';
+import 'package:tujimind/screens/courses_screen.dart';
+import 'package:tujimind/screens/main_screen.dart';
+import 'package:tujimind/screens/media_catalogue_screen.dart';
 import 'package:tujimind/widgets/self_help_card_item.dart';
 
 import '../models/self_help_card.dart';
+import 'course_details_screen.dart';
+import 'library_screen.dart';
 
 class SelfHelpScreen extends StatefulWidget {
   const SelfHelpScreen({Key? key}) : super(key: key);
@@ -13,33 +19,36 @@ class SelfHelpScreen extends StatefulWidget {
 }
 
 class _SelfHelpScreenState extends State<SelfHelpScreen> {
-  final List<SelfHelpCard> _items = [
+  late final List<SelfHelpCard> _items = [
     SelfHelpCard(
       title: "Find Peer Group",
       subtitle:
           "Discuss with peers & ask questions on how to survive depression.",
       icon: FontAwesomeIcons.peopleCarryBox,
-      color: const Color(0xFF7E88E3),
+      color: tujiLightBlueColor,
     ),
     SelfHelpCard(
       title: "Access Library",
       subtitle: "Pick from a variety of readable content to learn from.",
       icon: FontAwesomeIcons.book,
-      color: const Color(0xFF44AE80),
+      color: tujiGreenColor,
+      onTap: () => Navigator.of(MainScreen.universalContext!).pushNamed(LibraryScreen.id),
     ),
     SelfHelpCard(
       title: "Access Media Catalogue",
       subtitle: "Pick from a variety of video and audio content "
           "to learn from.",
       icon: FontAwesomeIcons.play,
-      color: const Color(0xFFD87979),
+      color: tujiRedColor,
+      onTap: () => Navigator.of(MainScreen.universalContext!).pushNamed(MediaCatalogueScreen.id),
     ),
     SelfHelpCard(
-      title: "Course",
+      title: "Courses",
       subtitle: "Find free and paid for courses, brought to "
           "you by the world's best training partners",
       icon: FontAwesomeIcons.clipboardList,
-      color: const Color(0xFFB7B7B7),
+      color: tujiGreyColor,
+      onTap: () => Navigator.of(MainScreen.universalContext!).pushNamed(CoursesScreen.id),
     ),
     SelfHelpCard(
       title: "Motivation",
@@ -53,7 +62,7 @@ class _SelfHelpScreenState extends State<SelfHelpScreen> {
       subtitle: "Pick from a variety of video and audio content "
           "to relax & meditate on",
       icon: FontAwesomeIcons.peopleRobbery,
-      color: const Color(0xFFE3693F),
+      color: tujiDarkOrangeColor,
     ),
   ];
 

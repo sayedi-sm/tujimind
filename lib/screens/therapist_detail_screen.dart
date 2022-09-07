@@ -48,7 +48,7 @@ class TherapistDetailsScreen extends StatelessWidget {
                           index != 4
                               ? FontAwesomeIcons.solidStar
                               : FontAwesomeIcons.solidStarHalfStroke,
-                          color: buttonColor,
+                          color: primaryColor,
                         ),
                       ),
                     ),
@@ -81,12 +81,12 @@ class TherapistDetailsScreen extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: "${therapist.phone}",
-                                  style: TextStyle(color: buttonColor),
+                                  style: TextStyle(color: primaryColor),
                                 ),
                                 TextSpan(text: "\nEmail "),
                                 TextSpan(
                                   text: "${therapist.email}",
-                                  style: TextStyle(color: buttonColor),
+                                  style: TextStyle(color: primaryColor),
                                 ),
                               ],
                             ),

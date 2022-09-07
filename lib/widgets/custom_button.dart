@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         minimumSize: MaterialStateProperty.all(const Size(double.infinity, 50)),
-        backgroundColor: MaterialStateProperty.all(buttonColor),
+        backgroundColor: MaterialStateProperty.all(primaryColor),
       ),
       child: child,
     );

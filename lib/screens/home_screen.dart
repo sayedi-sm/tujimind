@@ -5,10 +5,10 @@ import 'package:tujimind/models/tuji_card.dart';
 import 'package:tujimind/screens/activities_screen.dart';
 import 'package:tujimind/screens/main_screen.dart';
 import 'package:tujimind/screens/screening_screen.dart';
-import 'package:tujimind/widgets/feed_message.dart';
+import 'package:tujimind/widgets/feed_message_item.dart';
 import 'package:tujimind/widgets/tuji_card_item.dart';
 
-import '../models/message.dart';
+import '../models/feed_message.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -45,37 +45,37 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   ];
 
-  final List<Message> _messages = [
-    Message(
+  final List<FeedMessage> _messages = [
+    FeedMessage(
         sender: "Strong Rambo",
         message: "I am really enjoying the discussion we are having."
             "This is really a very good start to find the right way out of our situations"),
-    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    Message(
+    FeedMessage(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    FeedMessage(
         sender: "23 Greatest",
         message: "Thanks for listening to my rants, love ya'll"),
-    Message(
+    FeedMessage(
         sender: "Strong Rambo",
         message: "I am really enjoying the discussion we are having."
             "This is really a very good start to find the right way out of our situations"),
-    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    Message(
+    FeedMessage(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    FeedMessage(
         sender: "23 Greatest",
         message: "Thanks for listening to my rants, love ya'll"),
-    Message(
+    FeedMessage(
         sender: "Strong Rambo",
         message: "I am really enjoying the discussion we are having."
             "This is really a very good start to find the right way out of our situations"),
-    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    Message(
+    FeedMessage(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    FeedMessage(
         sender: "23 Greatest",
         message: "Thanks for listening to my rants, love ya'll"),
-    Message(
+    FeedMessage(
         sender: "Strong Rambo",
         message: "I am really enjoying the discussion we are having."
             "This is really a very good start to find the right way out of our situations"),
-    Message(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
-    Message(
+    FeedMessage(sender: "Khalligraph", message: "Quick fox jumps over the cat"),
+    FeedMessage(
         sender: "23 Greatest",
         message: "Thanks for listening to my rants, love ya'll"),
   ];
@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: ListView.separated(
               itemCount: _messages.length,
-              itemBuilder: (ctx, index) => FeedMessage(_messages[index]),
+              itemBuilder: (ctx, index) => FeedMessageItem(_messages[index]),
               separatorBuilder: (ctx, int index) => const SizedBox(height: 12),
             ),
           ),

@@ -130,15 +130,15 @@ class AssessmentScreen extends StatelessWidget {
                 ),
                 done: const Text(
                   "Complete",
-                  style: TextStyle(color: buttonColor),
+                  style: TextStyle(color: primaryColor),
                 ),
                 next: const Text(
                   "Proceed",
-                  style: TextStyle(color: buttonColor),
+                  style: TextStyle(color: primaryColor),
                 ),
                 skip: const Text(
                   "Skip",
-                  style: TextStyle(color: buttonColor),
+                  style: TextStyle(color: primaryColor),
                 ),
                 showSkipButton: true,
                 nextFlex: 0,
@@ -146,7 +146,7 @@ class AssessmentScreen extends StatelessWidget {
                 globalBackgroundColor: Colors.transparent,
                 isBottomSafeArea: true,
                 dotsDecorator: DotsDecorator(
-                  activeColor: buttonColor,
+                  activeColor: primaryColor,
                   color: dotsColor,
                   activeShape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),

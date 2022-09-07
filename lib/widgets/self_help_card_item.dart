@@ -9,7 +9,7 @@ class SelfHelpCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: selfHelpCard.onTap ?? () {},
       child: Ink(
         decoration: BoxDecoration(
           color: selfHelpCard.color,

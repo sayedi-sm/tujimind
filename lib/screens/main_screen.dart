@@ -98,7 +98,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             title: (_bottomNavBarIcons[index][0]),
             activeColorPrimary: activeBottomNavBarColor,
-            inactiveColorPrimary: inactiveBottomNavBarColor,
+            inactiveColorPrimary: tujiDarkGreyColor,
           ),
     );
   }

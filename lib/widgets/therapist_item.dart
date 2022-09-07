@@ -56,7 +56,7 @@ class TherapistItem extends StatelessWidget {
                       index != 4
                           ? FontAwesomeIcons.solidStar
                           : FontAwesomeIcons.solidStarHalfStroke,
-                      color: buttonColor,
+                      color: primaryColor,
                       size: 16,
                     ),
                   ),
@@ -80,7 +80,7 @@ class TherapistItem extends StatelessWidget {
                 child: Text("Book Appointment"),
                 style: ButtonStyle(
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  backgroundColor: MaterialStateProperty.all(buttonColor),
+                  backgroundColor: MaterialStateProperty.all(primaryColor),
                   shape: MaterialStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),

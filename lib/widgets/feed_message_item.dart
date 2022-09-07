@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tujimind/models/message.dart';
+import 'package:tujimind/constants.dart';
+import 'package:tujimind/models/feed_message.dart';
 
-class FeedMessage extends StatelessWidget {
-  const FeedMessage(this.message, {Key? key}) : super(key: key);
-  final Message message;
+class FeedMessageItem extends StatelessWidget {
+  const FeedMessageItem(this.message, {Key? key}) : super(key: key);
+  final FeedMessage message;
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFFF4F2FF),
+      color: cardFillColor,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
@@ -16,7 +17,7 @@ class FeedMessage extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            border: Border.all(color: const Color(0xFFE3E3E3)),
+            border: Border.all(color: cardBorderColor),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
